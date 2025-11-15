@@ -1,0 +1,16 @@
+<%= fields_for :mobile_app_project, projectable do |m| %>
+  <div>
+    <%= m.label :store_link, "Store Link" %>
+    <%= m.text_field :store_link %>
+  </div>
+
+  <div>
+    <%= m.label :os, "Operating System" %>
+    <%= m.text_field :os %>
+  </div>
+
+  <div>
+    <%= m.label :tech_used, "Technology Used" %>
+    <%= m.text_area :tech_used %>
+  </div>
+<% end %>

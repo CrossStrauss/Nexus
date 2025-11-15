@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  engine_version: MyString
+  download_url: MyString
+  platform: MyString
+
+two:
+  engine_version: MyString
+  download_url: MyString
+  platform: MyString

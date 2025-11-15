@@ -1,0 +1,2 @@
+class UnrealProject < ApplicationRecord
+end

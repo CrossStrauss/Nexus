@@ -1,0 +1,2 @@
+class MobileAppProject < ApplicationRecord
+end

@@ -22,9 +22,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="h-[100vh]">
+    <main class="h-full flex flex-col">
+      <%= render 'shared/navbar'%>
+      <div class="flex w-full h-[80vh]">
+        <%= render 'shared/sidebar'%>
+        <div class='flex-grow p-6 overflow-auto'>
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'shared/footer'%>
     </main>
   </body>
 </html>

@@ -1,0 +1,16 @@
+<%= fields_for :web_dev_project, projectable do |w| %>
+  <div>
+    <%= w.label :github_url %>
+    <%= w.text_field :github_url %>
+  </div>
+
+  <div>
+    <%= w.label :live_url %>
+    <%= w.text_field :live_url %>
+  </div>
+
+  <div>
+    <%= w.label :tech_stack %>
+    <%= w.text_area :tech_stack %>
+  </div>
+<% end %>

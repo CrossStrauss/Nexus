@@ -1,0 +1,2 @@
+class WebDevProject < ApplicationRecord
+end

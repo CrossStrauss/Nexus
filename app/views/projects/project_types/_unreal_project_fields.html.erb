@@ -1,0 +1,16 @@
+<%= fields_for :unreal_project, projectable do |u| %>
+  <div>
+    <%= u.label :engine_version, "Engine Version" %>
+    <%= u.text_field :engine_version %>
+  </div>
+
+  <div>
+    <%= u.label :download_url, "Download URL" %>
+    <%= u.text_field :download_url %>
+  </div>
+
+  <div>
+    <%= u.label :platform, "Platform" %>
+    <%= u.text_field :platform %>
+  </div>
+<% end %>
