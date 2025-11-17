@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  #
+
+  root "projects#index"
   get "projects/new/:type", to: "projects#new", as: :new_typed_project
   resources :projects
 end

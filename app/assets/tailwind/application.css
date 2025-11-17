@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+
+    /* Custom Colours */
+    --color-primary-custom: oklch(0.2665 0.0843 265.2);
+    --color-secondary-custom: oklch(0.7153 0.1794 50.61);
+    --color-accent-custom: oklch(0.8596 0.083 118.52);
+    --color-background-custom: oklch(0.9491 0 0);
+    
+}
