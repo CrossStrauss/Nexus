@@ -1,9 +1,9 @@
 <h1 class="text-3xl">Choose Project Type</h1>
 
 <div class="flex gap-3 py-2">
-    <%= link_to "Web Dev Project", new_typed_project_path("WebDevProject"), class: 'px-3 py-2 border border-gray-800 rounded-xl hover:bg-gray-800 hover:text-white' %>
-    <%= link_to "Unreal Project", new_typed_project_path("UnrealProject"), class: 'px-3 py-2 border border-gray-800 rounded-xl hover:bg-gray-800 hover:text-white' %>
-    <%= link_to "Mobile App Project", new_typed_project_path("MobileAppProject"), class: 'px-3 py-2 border border-gray-800 rounded-xl hover:bg-gray-800 hover:text-white' %>
+    <%= link_to "Web Dev Project", new_typed_project_path("WebDevProject"), class: 'btn-primary' %>
+    <%= link_to "Unreal Project", new_typed_project_path("UnrealProject"), class: 'btn-primary' %>
+    <%= link_to "Mobile App Project", new_typed_project_path("MobileAppProject"), class: 'btn-primary' %>
 </div>
 
 <%= render 'form'%>

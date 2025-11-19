@@ -1,16 +1,16 @@
 <%= fields_for :unreal_project, projectable do |u| %>
-  <div>
+  <div class="input-div">
     <%= u.label :engine_version, "Engine Version" %>
-    <%= u.text_field :engine_version %>
+    <%= u.text_field :engine_version, class: 'input-styling' %>
   </div>
 
-  <div>
+  <div class="input-div">
     <%= u.label :download_url, "Download URL" %>
-    <%= u.text_field :download_url %>
+    <%= u.text_field :download_url, class: 'input-styling' %>
   </div>
 
-  <div>
+  <div class="input-div">
     <%= u.label :platform, "Platform" %>
-    <%= u.text_field :platform %>
+    <%= u.text_field :platform, class: 'input-styling' %>
   </div>
 <% end %>
