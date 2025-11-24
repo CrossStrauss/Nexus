@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project, only: [ :show, :edit, :update ]
 
   def index
     @projects = Project.all.includes(:projectable)
+    @webProjects = Project.where(projectable_type: "WebDevProject")
   end
 
   def show
@@ -22,7 +24,7 @@ class ProjectsController < ApplicationController
       @project = Project.new(project_params.merge(projectable: @projectable))
 
       if @project.save
-        redirect_to @project, notice: "Project created successfully!"
+        redirect_to projects_path, notice: "Project created successfully!"
       else
         render :new
       end

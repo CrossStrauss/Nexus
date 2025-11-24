@@ -12,6 +12,11 @@
                 </svg>
             <% end %>
         </div>
+        <div>
+            <% @webProjects.each do |project| %>
+                <%= render 'projects/shared/project_card', project: project %>
+            <% end  %>
+        </div>
     </div>
 
     <div class="p-4 border border-gray-800">

@@ -24,6 +24,14 @@
 
   <body class="h-[100vh]">
     <main class="h-full flex flex-col">
+      <div class="fixed top-8 right-0">
+        <% if notice.present? %>
+          <p class="notice w-min bg-white py-4 px-6"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+          <p class="alert w-[auto] bg-white py-4 px-6"><%= alert %></p>
+        <% end %>
+      </div>
       <%= render 'shared/navbar'%>
       <div class="flex w-full h-[80vh]">
         <%= render 'shared/sidebar'%>
