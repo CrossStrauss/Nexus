@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_project, only: [ :show, :edit, :update ]
+  before_action :set_project, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @projects = Project.all.includes(:projectable)
     @webProjects = Project.where(projectable_type: "WebDevProject")
+    @unrealProjects = Project.where(projectable_type: "UnrealProject")
+    @mobileProjects = Project.where(projectable_type: "MobileAppProject")
   end
 
   def show
@@ -45,6 +47,13 @@ class ProjectsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @project.projectable.destroy if @project.projectable.present?
+
+    @project.destroy
+    redirect_to projects_path, notice: "Project was successfully deleted."
   end
 
   private

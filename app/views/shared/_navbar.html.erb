@@ -8,7 +8,9 @@
       <span class="text-white font-medium text-sm">
         Logged in as <%= current_user.email %>
       </span>
-      <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn-primary-border-white' %>
+      <div class="flex justify-end ">
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn-primary-border-white' %>
+      </div>
     <% else %>
       <%= link_to 'Login', new_user_session_path %>
       <%= link_to 'Sign up', new_user_registration_path %>
