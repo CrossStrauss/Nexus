@@ -1,16 +1,21 @@
 <div class="w-full h-full flex justify-center items-center">
-  <div class="border-1 p-4">
+  <div class="neumorphic">
+
+    <div class="p-2 flex justify-center">
+      <%= image_tag 'NexusLogo.png', class: 'size-20'%>
+    </div>
+
     <h2 class="text-center text-2xl mb-3">Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field flex flex-row justify-between mb-3">
         <%= f.label :email, class: 'me-3' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-styling' %>
       </div>
 
       <div class="field flex flex-row justify-between mb-3">
         <%= f.label :password, class: 'me-3' %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'input-styling' %>
       </div>
 
       <% if devise_mapping.rememberable? %>

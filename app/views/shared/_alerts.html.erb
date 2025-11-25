@@ -1,0 +1,8 @@
+<div class="fixed top-8 right-0 border border-1 animate-move-alert">
+    <% if notice.present? %>
+        <p class="notice w-[auto] bg-white py-4 px-6 nowrap" data-controller="alert"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+        <p class="alert w-[auto] bg-white py-4 px-6 nowrap"><%= alert %></p>
+    <% end %>
+</div>

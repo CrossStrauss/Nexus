@@ -24,15 +24,8 @@
 
   <body class="h-[100vh]">
     <main class="h-full flex flex-col">
-      <%= render 'shared/alerts'%>
-      <%= render 'shared/navbar'%>
-      <div class="flex w-full h-[80vh]">
-        <%= render 'shared/sidebar'%>
-        <div class='flex-grow p-6 overflow-auto'>
-          <%= yield %>
-        </div>
-      </div>
-      <%= render 'shared/footer'%>
+        <%= render 'shared/alerts'%>
+        <%= yield %>
     </main>
   </body>
 </html>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'neumorphic';
 
 @theme {
 
@@ -27,4 +28,34 @@
     .btn-primary-border-white {
         @apply px-3 py-2 bg-white border border-gray-800 hover:bg-gray-800 hover:text-white hover:border-white
     }
+
+    /* Neumorphic styling */
+    .neumorphic {
+        @apply rounded-[50px] bg-[#e0e0e0];
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
  }
+
+ @layer utilities {
+
+    @keyframes grow-width {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+
+    .animate-grow {
+        animation: grow-width 5s linear forwards;
+    }
+
+    @keyframes move-alert {
+        0%   { transform: translateX(100%); opacity: 0; } 
+        20%  { transform: translateX(0%); opacity: 1; }  
+        80%  { transform: translateX(0%);  opacity: 1; }              
+        100% { transform: translateX(100%); opacity: 0;}    
+    }
+
+    .animate-move-alert {
+        @apply transform block;
+        animation: move-alert 2.5s ease-in-out forwards;
+    }
+}
