@@ -1,8 +1,146 @@
-@layer base {
-  
-    /* Neumorphic styling */
-    .neumorphic {
-        @apply rounded-[50px] bg-[#e0e0e0];
-        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-    }
- }
+.neumorphic {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #bbbbbd, #dfdfe1);
+    box-shadow:  20px 20px 60px #b1b1b3,
+                -20px -20px 60px #efeff2;
+}
+
+.neu-text-inset {
+  color: #555; /* darker text works best */
+  text-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.neu-text-raised {
+  color: #333;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.25),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  padding: 5px 10px;
+  background-color: #e1e2e3;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+.input:focus {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}
+
+.neu-button {
+  color: #090909;
+  padding: 0.3em 1em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #d0d0d2;
+  cursor: pointer;
+  border: 1px solid #d0d0d2;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #b1b1b3, -6px -6px 12px #efeff2;
+}
+
+.neu-button:hover {
+  border: 1px solid white;
+}
+
+.neu-button:active {
+  box-shadow: 4px 4px 12px #b1b1b3, -4px -4px 12px #efeff2;
+}
+
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Neumorphic circle */
+.checkmark {
+  position: relative;
+  height: 1.3em;
+  width: 1.3em;
+  background: #d0d0d2;
+  border-radius: 100%;
+  box-shadow: 3px 3px 5px #b1b1b3,
+              -3px -3px 5px #efeff2;
+  transition-duration: 0.5s;
+}
+
+/* Pressed state */
+.container input:checked ~ .checkmark {
+  box-shadow: inset 3px 3px 5px #b1b1b3,
+              inset -3px -3px 5px #efeff2;
+}
+
+/* Tick mark base */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* Tick mark when checked */
+.container input:checked ~ .checkmark:after {
+  opacity: 1;
+}
+
+.container .checkmark:after {
+  left: 0.5em;
+  top: 0.35em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid darkgray;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+
+
+/* Inset text */
+
+.inner-text-shadow {
+    font-size: 10rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+    color: hsla(0, 0%, 13%, 1);
+    
+    position: relative;
+}
+
+.inner-text-shadow::after {
+    content: attr(data-text);
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    color: #FFF;
+    text-shadow: 0px 0px 5px #FFF;
+    mix-blend-mode: overlay;
+}
+
+
+
+

@@ -1,32 +1,35 @@
-<div class="w-full h-full flex justify-center items-center">
-  <div class="neumorphic">
+<div class="w-full h-full flex justify-center items-center bg-neumorphic-grey">
+  <div class="neumorphic py-4 px-8">
 
     <div class="p-2 flex justify-center">
-      <%= image_tag 'NexusLogo.png', class: 'size-20'%>
+      <%= image_tag 'NexusLogo.png', class: 'w-40'%>
     </div>
 
     <h2 class="text-center text-2xl mb-3">Log in</h2>
-
+  
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field flex flex-row justify-between mb-3">
         <%= f.label :email, class: 'me-3' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-styling' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
       </div>
 
       <div class="field flex flex-row justify-between mb-3">
         <%= f.label :password, class: 'me-3' %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: 'input-styling' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field flex flex-row mb-3">
-          <%= f.check_box :remember_me, class: 'me-3' %>
-          <%= f.label :remember_me %>
+        <div class="field flex flex-row mb-3 items-center">
+          <label class="container">
+            <%= f.check_box :remember_me %>
+            <div class="checkmark"></div>
+          </label>
+          <%= f.label :remember_me, class: "ml-3" %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class: 'btn-primary cursor-pointer mb-3' %>
+        <%= f.submit "Log in", class: 'neu-button cursor-pointer mb-3' %>
       </div>
     <% end %>
 

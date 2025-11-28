@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'neumorphic';
+@import './neumorphic_styling';
 
 @theme {
 
@@ -10,6 +10,8 @@
     --color-background-custom: oklch(0.9491 0 0);
     --color-custom-red: oklch(0.6259 0.2138 31.18);
     
+
+    --color-neumorphic-grey: oklch(0.8582 0.0027 286.34);
 }
 
 @layer base {
@@ -17,9 +19,9 @@
         @apply flex mb-3 justify-between
     }
 
-    .input-styling {
+    /* .input-styling {
         @apply border border-gray-800 w-100 ps-2
-    }
+    } */
 
     .btn-primary {
         @apply px-3 py-2 border border-gray-800 hover:bg-gray-800 hover:text-white
@@ -27,12 +29,6 @@
 
     .btn-primary-border-white {
         @apply px-3 py-2 bg-white border border-gray-800 hover:bg-gray-800 hover:text-white hover:border-white
-    }
-
-    /* Neumorphic styling */
-    .neumorphic {
-        @apply rounded-[50px] bg-[#e0e0e0];
-        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     }
  }
 
