@@ -1,38 +1,45 @@
-<div class="w-full h-full flex justify-center items-center bg-neumorphic-grey">
-  <div class="neumorphic py-4 px-8">
+<div class="w-full h-full flex justify-center items-center">
+  <div class="bg-primary-custom py-4 px-8">
 
     <div class="p-2 flex justify-center">
-      <%= image_tag 'NexusLogo.png', class: 'w-40'%>
+      <h1 class="text-3xl text-white font-semibold">
+        NEXUS
+      </h1>
     </div>
 
-    <h2 class="text-center text-2xl mb-3">Log in</h2>
+    <h2 class="text-center text-2xl mb-3 neu-text-inset text-white">Log in</h2>
   
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field flex flex-row justify-between mb-3">
-        <%= f.label :email, class: 'me-3' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
+        <%= f.label :email, class: 'me-3 text-white' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-styling outline-hidden bg-white' %>
       </div>
 
       <div class="field flex flex-row justify-between mb-3">
-        <%= f.label :password, class: 'me-3' %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
+        <%= f.label :password, class: 'me-3 text-white' %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: 'input-styling outline-hidden bg-white' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field flex flex-row mb-3 items-center">
-          <label class="container">
+        <div class="field flex flex-row items-center">
+          <label class="container w-fit ">
             <%= f.check_box :remember_me %>
             <div class="checkmark"></div>
           </label>
-          <%= f.label :remember_me, class: "ml-3" %>
+          <%= f.label :remember_me, class: "ml-3 neu-text-inset text-white" %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class: 'neu-button cursor-pointer mb-3' %>
+        <%= f.submit "Log in", class: 'neu-button cursor-pointer my-5 text-primary-custom bg-white px-4 py-2 border-1 border-white hover:bg-primary-custom hover:text-white' %>
       </div>
     <% end %>
 
     <%= render "devise/shared/links" %>
+
+    <div class="relative">
+      
+    </div>
+
   </div>
 </div>
