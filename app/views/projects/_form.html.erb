@@ -3,12 +3,12 @@
 
     <%= f.hidden_field :projectable_type, value: @project.projectable.class.name %>
 
-    <div class="input-div">
+    <div class="input-div grid grid-cols-2">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'input-styling' %>
     </div>
 
-    <div class="input-div">
+    <div class="input-div grid grid-cols-2">
       <%= f.label :description %>
       <%= f.text_area :description, class: 'input-styling' %>
     </div>

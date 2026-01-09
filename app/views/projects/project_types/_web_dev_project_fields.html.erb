@@ -1,15 +1,15 @@
 <%= fields_for :web_dev_project, projectable do |w| %>
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= w.label :github_url %>
     <%= w.text_field :github_url, class: 'input-styling' %>
   </div>
 
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= w.label :live_url %>
     <%= w.text_field :live_url, class: 'input-styling' %>
   </div>
 
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= w.label :tech_stack %>
     <%= w.text_area :tech_stack, class: 'input-styling' %>
   </div>

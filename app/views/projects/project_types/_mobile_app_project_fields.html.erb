@@ -1,15 +1,15 @@
 <%= fields_for :mobile_app_project, projectable do |m| %>
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= m.label :store_link, "Store Link" %>
     <%= m.text_field :store_link, class: 'input-styling' %>
   </div>
 
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= m.label :os, "Operating System" %>
     <%= m.text_field :os, class: 'input-styling' %>
   </div>
 
-  <div class="input-div">
+  <div class="input-div grid grid-cols-2">
     <%= m.label :tech_used, "Technology Used" %>
     <%= m.text_area :tech_used, class: 'input-styling' %>
   </div>
