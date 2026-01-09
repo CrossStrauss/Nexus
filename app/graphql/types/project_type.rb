@@ -8,5 +8,9 @@ module Types
 
     # Polymorphic association
     field :projectable, Types::ProjectableType, null: false
+
+    def projectable
+      object.projectable
+    end
   end
 end

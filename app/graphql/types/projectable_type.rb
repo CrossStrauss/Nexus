@@ -1,21 +1,20 @@
 # app/graphql/types/projectable_type.rb
 module Types
   class ProjectableType < Types::BaseUnion
-    description "The underlying type of a Project"
-    possible_types Types::MobileAppProjectType,
-                   Types::UnrealProjectType,
-                   Types::WebDevProjectType
+    description "Polymorphic projectable types"
+
+    possible_types Types::MobileAppProjectType, Types::WebDevProjectType, Types::UnrealProjectType
 
     def self.resolve_type(object, _context)
       case object
       when MobileAppProject
         Types::MobileAppProjectType
-      when UnrealProject
-        Types::UnrealProjectType
       when WebDevProject
         Types::WebDevProjectType
+      when UnrealProject
+        Types::UnrealProjectType
       else
-        raise "Unexpected Projectable: #{object.inspect}"
+        raise("Unknown projectable type: #{object.class}")
       end
     end
   end

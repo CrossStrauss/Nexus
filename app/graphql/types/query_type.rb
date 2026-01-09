@@ -30,23 +30,22 @@ module Types
       Project.all
     end
 
-    field :mobile_app_projects, [ Types::MobileAppProjectType ], null: false,
+    field :mobile_app_projects, [ Types::ProjectType ], null: false,
       description: "Fetch only Mobile App projects"
-
-      def mobile_app_projects
-      MobileAppProject.all
+    def mobile_app_projects
+      Project.where(projectable_type: "MobileAppProject").includes(:projectable)
     end
 
-    field :unreal_projects, [ Types::UnrealProjectType ], null: false,
+    field :unreal_projects, [ Types::ProjectType ], null: false,
           description: "Fetch only Unreal projects"
     def unreal_projects
-      UnrealProject.all
+      Project.where(projectable_type: "UnrealProject").includes(:projectable)
     end
 
-    field :web_dev_projects, [ Types::WebDevProjectType ], null: false,
-          description: "Fetch only Web Dev projects"
+    field :web_dev_projects, [ Types::ProjectType ], null: false,
+      description: "Fetch only Web Dev projects"
     def web_dev_projects
-      WebDevProject.all
+      Project.where(projectable_type: "WebDevProject").includes(:projectable)
     end
 
     # TODO: remove me
