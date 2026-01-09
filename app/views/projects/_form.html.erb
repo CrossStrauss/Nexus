@@ -13,6 +13,21 @@
       <%= f.text_area :description, class: 'input-styling' %>
     </div>
 
+    <div class="input-div grid grid-cols-2">
+      <% if @project.thumbnail.attached? %>
+        <p>Current file:</p>
+        <div>
+          <%= @project.thumbnail.filename %>
+          <%= image_tag @project.thumbnail.variant(resize_to_limit: [150, 150]) %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="input-div grid grid-cols-2">
+      <%= f.label :thumbnail %>
+      <%= f.file_field :thumbnail, class: 'input-styling cursor-pointer' %>
+    </div>
+
     <%= render "projects/project_types/#{ @project.projectable.class.name.underscore }_fields",
               f: f,
               projectable: @project.projectable %>

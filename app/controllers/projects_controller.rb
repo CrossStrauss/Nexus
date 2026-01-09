@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
     @projectable = @project.projectable
 
     if @project.update(project_params) && @projectable.update(projectable_params)
-      redirect_to @project, notice: "Project updated successfully!"
+      redirect_to projects_path, notice: "Project updated successfully!"
     else
       render :edit
     end
